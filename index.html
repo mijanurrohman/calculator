@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>calculator </title>
+</head>
+<style>
+  .table {
+    background: black;
+    width: 400px;
+    height: 300px;
+    margin: auto;
+    position: relative;
+}
+   .table tbody tr td input.result{
+    width: 400%;
+    height: 70px;
+    padding: auto;
+    margin-top: 4px;
+    border: 2px solid pink;
+    margin-left: 2px;
+    border-radius: 3px;
+    font-size: 30px;
+}
+input[type="button"] {
+  width: 92px;
+    height: 33px;
+    margin: auto;
+    margin-top: 1px;
+    font-size: 20px;
+}
+input[type="button"]:hover{
+  background: rgb(179, 140, 78);
+  border: 2px solid tomato;
+  color: blue;
+}
+.td{
+  text-align: center;
+    height: 7px;
+    border: 2px solid rgb(59, 41, 41);
+    position: relative;
+}
+.ta{
+  text-align: center;
+}
+</style>
+<body>
+
+  <div class="table">
+      
+  <table>
+    <div class="ans">
+      <tr>
+        <td class="ta"><input type="text"  class="result"> </td>
+      </tr>
+    </div>
+    <div class="btn">
+      <tr>
+      
+        <td class="td"> <input type="button" value="c" onclick="deleteme('c')"></td>
+        <td  class="td"> <input type="button" onclick="calculator('(')"value="("></td>
+        <td class="td"> <input type="button" onclick="calculator(')')"value=")"></td>
+        <td class="back"> <input type="button" onclick="calculator('.')"value="."></td>
+        
+  
+  
+  
+        </tr>
+      
+          <tr>
+         
+            
+            <td class="td"> <input type="button" onclick="calculator('7')"value="7"></td>
+            <td class="td"> <input type="button" onclick="calculator('8')"value="8"></td>
+            <td class="td"> <input type="button" onclick="calculator('9')"value="9"></td>
+            <td class="td"> <input type="button" onclick="calculator('+')"value="+"></td>
+            
+      
+      
+      
+            </tr>
+            <tr>
+         
+            
+              <td class="td"> <input type="button" onclick="calculator('4')"value="4"></td>
+              <td class="td"> <input type="button" onclick="calculator('5')"value="5"></td>
+              <td class="td"> <input type="button" onclick="calculator('6')"value="6"></td>
+              <td class="td"> <input type="button" onclick="calculator('-')"value="-"></td>
+              
+        
+        
+        
+              </tr>
+              <tr>
+         
+            
+                <td class="td"> <input type="button" onclick="calculator('1')"value="1"></td>
+                <td class="td"> <input type="button" onclick="calculator('2')"value="2"></td>
+                <td class="td"> <input type="button" onclick="calculator('3')"value="3"></td>
+                <td class="td"> <input type="button" onclick="calculator('*')"value="*"></td>
+                
+          
+          
+          
+                </tr>
+                <tr>
+         
+            
+                  <td class="td"> <input type="button" onclick="calculator('0')"value="0"></td>
+                  <td class="td"> <input type="button" onclick="calculator('00')"value="00"></td>
+                  <td class="td"> <input type="button" onclick="calculator('/')"value="/"></td>
+                  <td class="td"> <input type="button" onclick="answer('=')"value="="></td>
+                  
+            
+            
+            
+                  </tr>
+    </div>
+    
+     
+
+  </table>
+
+  </div>
+ 
+  <script>
+   function deleteme(){
+     document.querySelector(".result").value="";
+
+   }
+  
+   function calculator( newvalue){
+    document.querySelector(".result").value +=newvalue;
+     
+   }
+  
+
+
+
+
+   function answer(){
+     let a=document.querySelector(".result").value;
+     let b=eval(a);
+     document.querySelector(".result").value=b
+
+   }
+   
+
+  </script>
+</body>
+</html>
